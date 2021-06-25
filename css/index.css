@@ -3,3 +3,11 @@
     margin: 10px;
     padding: 5px;
 }
+
+.card {
+    height: 100%;
+}
+
+.col-md-3 {
+    height: 300px;
+}

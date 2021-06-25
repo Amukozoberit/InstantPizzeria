@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -35,11 +40,12 @@
                                 <label for="Large">Large</label>
                             </div>
                             <div class="form-group">
-                                <input type="radio" id="Any" name="any" value="Any" checked>
+                                <input type="radio" id="Any" name="Size" value="Any" checked>
                                 <label for="Any">Any</label>
                             </div>
-                            <div class="card-footer mt-auto  text-muted text-center">Choosing any can lead to extra costs</div>
                         </div>
+                        <div class="footer bg-warning mt-auto  text-center">Choosing any can lead to extra costs</div>
+
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -55,22 +61,25 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="radio" id="Stuffed" name="Size" value="Stuffed">
+                                <input type="radio" id="Stuffed" name="Crust" value="Stuffed">
                                 <label for="Stuffed">Stuufed</label>
 
                             </div>
                             <div class="form-group">
-                                <input type="radio" id="Glutten-Free" name="Size" value="Glutten-Free">
+                                <input type="radio" id="Glutten-Free" name="Crust" value="Glutten-Free">
                                 <label for="Glutten-Free">Glutten-Free</label>
 
                             </div>
                             <div class="form-group">
-                                <input type="radio" id="none" name="none" value="none" checked>
+                                <input type="radio" id="None" name="Crust" value="none" checked>
                                 <label for="None">None</label>
 
                             </div>
-                            <div class="card-footer text-muted text-center">You can only choose one</div>
                         </div>
+                        <div class="footer text-center bg-warning">
+                            How crunchy do you want it
+                        </div>
+
                     </div>
                 </div>
 
@@ -78,10 +87,34 @@
                     <div class="form-group">
                         <div class="card">
                             <div class="card-header">
-                                Choose Size
+                                Toppings
                             </div>
                             <div class="card-body">
-
+                                <div class="form-group">
+                                    <input type="checkBox" id="checkBox1" checked>
+                                    <label for="checkBox1">Broccolini</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkBox" id="checkBox2">
+                                    <label for="checkBox2">
+                                        Sausage
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkBox" id="checkBox3">
+                                    <label for="checkBox3">
+                                        Potatoes
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkBox" id="checkBox4">
+                                    <label for="checkBox4">
+                                        Capsicum
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="footer text-center bg-warning">
+                                Each Tooping adds 50ksh dont overchoose to keep taste
                             </div>
                         </div>
                     </div>
@@ -89,19 +122,32 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <div class="card">
-                            <div class="card-header">
-                                Choose Size
-                            </div>
-                            <div class="card-body">
+                            <div class="card-header text-center d-flex justify-content-between">
+                                Order
+                                <div class="dropdown">
+                                    <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">How Many</button>
+                                    <ul class="dropdown-menu">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </div>
 
+                            </div>
+                            <div class="card-body ">
+
+                            </div>
+                            <div class="footer">
+                                <p>Total:</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
+        <div class="btn bg-info" id="new-form">Another difrent pizza</div>
     </div>
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js "></script>
 </body>
 
 </html>

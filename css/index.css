@@ -9,5 +9,12 @@
 }
 
 .col-md-3 {
-    height: 20%;
+    height: 300px;
+}
+
+.footer {
+    margin-top: auto;
+    height: 50px;
+    padding: 0;
+    background-color: orange !important;
 }

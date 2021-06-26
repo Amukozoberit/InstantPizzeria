@@ -81,9 +81,6 @@ Order.prototype.total = function() {
     // })
     tops = arr.forEach(function(top) {
         total += parseInt(toppingPrice[top]);
-
-
-
     });
     return (total);
 }

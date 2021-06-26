@@ -4,9 +4,11 @@ $(document).ready(function() {
         var inputtedSize = $('input[name="Size"]:checked').val();
         var inputtedCrust = $('input[name="Crust"]:checked').val();
         // console.log(inputtedTop);
+        var howMany = $('input#howMany').val();
+        console.log(howMany)
         console.log(inputtedCrust);
         console.log(inputtedSize);
-        var order1 = new Order(inputtedSize, inputtedCrust, inputtedTop)
+        var order1 = new Order(inputtedSize, inputtedCrust, inputtedTop, howMany)
         console.log(order1);
         var size = document.getElementById("orderSize");
         size.textContent = "Size:       " + inputtedSize;
@@ -16,7 +18,7 @@ $(document).ready(function() {
         toppings.textContent = " "
 
         toppings.textContent = "Toppings:       " + inputtedTop;
-        var ordertot = document.querySelector("#orderTotal");
+        var ordertot = document.querySelector("#orderTotal p");
         ordertot.textContent = "Total=    " +
             order1.total();
 
@@ -34,16 +36,18 @@ $("input[type=checkbox]").change(function() {
 
 
 });
+
 $("#add-form").click(function() {
     $("form#pizzaOrder").append()
 });
 
 
 
-function Order(Size, Crust, Toppings) {
+function Order(Size, Crust, Toppings, howMany) {
     this.Size = Size;
     this.Crust = Crust;
     this.Toppings = Toppings;
+    this.howMany = howMany;
 }
 let sizePrices = {
     Small: 500,
@@ -72,15 +76,14 @@ Order.prototype.total = function() {
     let total = 0;
     let sizep = parseInt(sizePrices[this.Size]);
     let crustP = parseInt(crustPrices[this.Crust]);
+    let howMany = parseInt(this.howMany);
     let arr = this.Toppings;
     total += sizep;
     total += crustP;
-    // total += t;
-    // return arr.map(function(ar) {
-    //     return total + parseInt(toppingPrice[ar]);
-    // })
+
     tops = arr.forEach(function(top) {
         total += parseInt(toppingPrice[top]);
     });
+    total *= howMany;
     return (total);
 }

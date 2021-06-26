@@ -4,16 +4,16 @@ $(document).ready(function() {
         var inputtedSize = $('input[name="Size"]:checked').val();
         var inputtedCrust = $('input[name="Crust"]:checked').val();
         $('input[name="Toppings"]:checked').each(function() {
-            //console.log(this.value);
+            // console.log(this.value);
+            if (inputtedTop.includes(this.value)) {
 
-            inputtedTop.push(this.value);
+            } else {
+                inputtedTop.push(this.value);
+            }
+
 
         });
         console.log(inputtedTop);
-        // $('input[name="Toppings"]:checked').each(function() {
-        //     console.log(this.value);
-        // });
-
         console.log(inputtedCrust);
         console.log(inputtedSize);
 

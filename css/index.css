@@ -18,3 +18,8 @@
     padding: 0;
     background-color: orange !important;
 }
+
+#howMany {
+    height: 100%;
+    width: 100%;
+}

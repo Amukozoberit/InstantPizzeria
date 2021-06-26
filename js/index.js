@@ -13,10 +13,11 @@ $(document).ready(function() {
 
 
         });
-        console.log(inputtedTop);
-        console.log(inputtedCrust);
-        console.log(inputtedSize);
-
+        // console.log(inputtedTop);
+        // console.log(inputtedCrust);
+        // console.log(inputtedSize);
+        var order1 = new Order(inputtedSize, inputtedCrust, inputtedTop)
+        console.log(order1);
     });
 
 

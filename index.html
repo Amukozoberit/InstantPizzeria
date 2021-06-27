@@ -16,146 +16,153 @@
 </head>
 
 <body>
-    <h2 class="text-center">Order Page</h2>
+
     <div class="container">
-        <form id="pizzaOrder">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            Choose Size
-                        </div>
-                        <div class="card-body">
-
-                            <div class="form-group">
-                                <input type="radio" id="Small" name="Size" value="Small" class="Small">
-                                <label for="Small">Small</label>
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">Order Page</h2>
+            </div>
+            <form id="pizzaOrder">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Choose Size
                             </div>
-                            <div class="form-group">
-                                <input type="radio" id="Medium" name="Size" value="Medium" class="Medium">
-                                <label for="Medium">Medium</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" id="Large" name="Size" value="Large" class="Large">
-                                <label for="Large ">Large</label>
-                            </div>
-                            <div class="form-group ">
-                                <input type="radio" id="Any" name="Size" value="Any" checked class="any">
-                                <label for="Any ">Any</label>
-                            </div>
-                        </div>
-                        <div class="footer bg-warning mt-auto text-center ">Choosing any can lead to extra costs</div>
+                            <div class="card-body">
 
-                    </div>
-                </div>
-                <div class="col-md-3 ">
-
-                    <div class="card ">
-                        <div class="card-header ">
-                            Choose Crust
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <input type="radio" id="Cripsy" name="Crust" value="Cripsy">
-                                <label for="Cripsy">Cripsy</label>
-
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" id="Stuffed" name="Crust" value="Stuffed">
-                                <label for="Stuffed">Stuufed</label>
-
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" id="Glutten-Free" name="Crust" value="gluttenFree">
-                                <label for="Glutten-Free ">Glutten-Free</label>
-
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" id="None" name="Crust" value="none" checked>
-                                <label for="None ">None</label>
-
-                            </div>
-                        </div>
-                        <div class="footer text-center bg-warning">
-                            How crunchy do you want it
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <div class="card ">
-                            <div class="card-header">
-                                Toppings
-                            </div>
-                            <div class="card-body " id="checkboxId">
-                                <div class="form-group ">
-                                    <input type="checkBox" id="checkBox1" value="Broccolini" name="Toppings">
-                                    <label for="checkBox1">Broccolini</label>
+                                <div class="form-group">
+                                    <input type="radio" id="Small" name="Size" value="Small" class="Small">
+                                    <label for="Small">Small</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="Medium" name="Size" value="Medium" class="Medium">
+                                    <label for="Medium">Medium</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="Large" name="Size" value="Large" class="Large">
+                                    <label for="Large ">Large</label>
                                 </div>
                                 <div class="form-group ">
-                                    <input type="checkBox" id="checkBox2" value="Sausage" name="Toppings">
-                                    <label for="checkBox2">
+                                    <input type="radio" id="Any" name="Size" value="Any" checked class="any">
+                                    <label for="Any ">Any</label>
+                                </div>
+                            </div>
+                            <div class="footer bg-warning mt-auto text-center ">Choosing any can lead to extra costs</div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 ">
+
+                        <div class="card ">
+                            <div class="card-header ">
+                                Choose Crust
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="radio" id="Cripsy" name="Crust" value="Cripsy">
+                                    <label for="Cripsy">Cripsy</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="Stuffed" name="Crust" value="Stuffed">
+                                    <label for="Stuffed">Stuufed</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="Glutten-Free" name="Crust" value="gluttenFree">
+                                    <label for="Glutten-Free ">Glutten-Free</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="None" name="Crust" value="none" checked>
+                                    <label for="None ">None</label>
+
+                                </div>
+                            </div>
+                            <div class="footer text-center bg-warning">
+                                How crunchy do you want it
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group ">
+                            <div class="card ">
+                                <div class="card-header">
+                                    Toppings
+                                </div>
+                                <div class="card-body " id="checkboxId">
+                                    <div class="form-group ">
+                                        <input type="checkBox" id="checkBox1" value="Broccolini" name="Toppings">
+                                        <label for="checkBox1">Broccolini</label>
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="checkBox" id="checkBox2" value="Sausage" name="Toppings">
+                                        <label for="checkBox2">
                                         Sausage
                                     </label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkBox" id="checkBox3" value="Potatoes" name="Toppings">
-                                    <label for="checkBox3">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkBox" id="checkBox3" value="Potatoes" name="Toppings">
+                                        <label for="checkBox3">
                                         Potatoes
                                     </label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkBox" id="checkBox4" value="Capsicum" name="Toppings">
-                                    <label for="checkBox4">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkBox" id="checkBox4" value="Capsicum" name="Toppings">
+                                        <label for="checkBox4">
                                         Capsicum
                                     </label>
-                                </div>
-                            </div>
-                            <div class="footer text-center bg-warning ">
-                                Each Tooping adds 50ksh dont overchoose to keep taste
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="orders">
-                        <div class="form-group">
-                            <div class="card">
-                                <div class="card-header text-center d-flex justify-content-between ">
-                                    Order
-                                </div>
-                                <div class="card-body">
-                                    <div class="orderZ" id="orderSize">
-                                        Size:
-                                    </div>
-                                    <div class="orderC p-3" id="orderCrust">
-                                        Crust:
-                                    </div>
-                                    <div class="orderT p-3" id="orderToppings">
-                                        Toppings:
                                     </div>
                                 </div>
-                                <div class="footer" id="orderTotal">
-                                    <p>Total:</p>
-                                    <div class="form-group text-center d-flex justify-content-between ">
-                                        <input id="howMany" min="1" type="number" value="1">
-
-                                    </div>
+                                <div class="footer text-center bg-warning ">
+                                    Each Tooping adds 50ksh dont overchoose to keep taste
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="orders">
+                            <div class="form-group">
+                                <div class="card">
+                                    <div class="card-header text-center d-flex justify-content-between ">
+                                        Order
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="orderZ" id="orderSize">
+                                            Size:
+                                        </div>
+                                        <div class="orderC p-3" id="orderCrust">
+                                            Crust:
+                                        </div>
+                                        <div class="orderT p-3" id="orderToppings">
+                                            Toppings:
+                                        </div>
+                                    </div>
+                                    <div class="footer" id="orderTotal">
+                                        <p>Total:</p>
+                                        <div class="form-group text-center d-flex justify-content-between ">
+                                            <input id="howMany" min="1" type="number" value="1">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <button type="button" class="bg-primary" id="new-order">Place Order</button>
-            <!-- // <button type="submit" class="submit" id="submit">Submit</button> -->
-        </form>
+                <button type="button" class="bg-primary" id="new-order">Place Order</button>
+                <!-- // <button type="submit" class="submit" id="submit">Submit</button> -->
+            </form>
 
 
+        </div>
     </div>
     <script src="./js/index.js "></script>
 </body>
+
+</html>
 
 </html>

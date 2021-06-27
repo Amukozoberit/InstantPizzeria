@@ -15,7 +15,6 @@ $(document).ready(function() {
         Crust.textContent = "Crust:      " + inputtedCrust;
         var toppings = document.querySelector("#orderToppings");
         toppings.textContent = " "
-
         toppings.textContent = "Toppings:       " + inputtedTop;
         var ordertot = document.querySelector("#orderTotal p");
         ordertot.textContent = "Total=    " +
@@ -28,18 +27,12 @@ $(document).ready(function() {
         var Toopings = document.querySelector("#orderToppings");
         var howMany = $("input#howMany").val();
         var Total = document.querySelector("#orderTotal p")
-            // alert(size.innerHTML);
-            // alert(Crust.innerHTML, );
-            // alert(Toopings.innerHTML);
-            // alert(howMany);
         if (($('input[name="Size"]:checked').val() === "Any") || ($('input[name="Crust"]:checked').val() === "") || (inputtedTop.length === 0)) {
             alert("hey your order is incomplete");
-
             $('input[type="radio"]').prop("checked", false);
             $('input[type="checkbox"]').prop("checked", false);
             return false;
         }
-        //alert("ksh" + Total.innerHTML);
         bo = '<div class="card w-400px">' +
             '<div class="card-header">' +
             '<h1 class="center">Order Summary</h1>' +
@@ -57,10 +50,8 @@ $(document).ready(function() {
             '</div>';
         document.getElementsByTagName("body")[0].innerHTML = bo;
 
-
         $('input[type="radio"]').prop("checked", false);
         $('input[type="checkbox"]').prop("checked", false);
-
         return false;
     });
 

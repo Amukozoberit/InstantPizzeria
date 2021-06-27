@@ -18,6 +18,9 @@
 <body>
     <h2 class="text-center">Order Page</h2>
     <div class="container">
+        <div class="card float-right w-30">
+
+        </div>
         <form id="pizzaOrder">
             <div class="row">
                 <div class="col-md-3">
@@ -119,41 +122,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 ">
-                    <div class="form-group ">
-                        <div class="card ">
-                            <div class="card-header text-center d-flex justify-content-between ">
-                                Order
-
-
-                            </div>
-                            <div class="card-body orders">
-                                <div class="orderS p-3" id="orderSize">
-                                    Size:
+                <div class="col-md-3">
+                    <div class="orders">
+                        <div class="form-group">
+                            <div class="card">
+                                <div class="card-header text-center d-flex justify-content-between ">
+                                    Order
                                 </div>
-                                <div class="orderC p-3" id="orderCrust">
-                                    Crust:
+                                <div class="card-body">
+                                    <div class="orderZ" id="orderSize">
+                                        Size:
+                                    </div>
+                                    <div class="orderC p-3" id="orderCrust">
+                                        Crust:
+                                    </div>
+                                    <div class="orderT p-3" id="orderToppings">
+                                        Toppings:
+                                    </div>
                                 </div>
-                                <div class="orderT p-3" id="orderToppings">
-                                    Toppings:
-                                </div>
-                            </div>
-                            <div class="footer" id="orderTotal">
-                                <p>Total:</p>
-                                <div class="form-group text-center d-flex justify-content-between ">
-                                    <input id="howMany" min="1" type="number" value="1">
+                                <div class="footer" id="orderTotal">
+                                    <p>Total:</p>
+                                    <div class="form-group text-center d-flex justify-content-between ">
+                                        <input id="howMany" min="1" type="number" value="1">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="bg-primary" id="new-order">new Order</button>
+            <button type="button" class="bg-primary" id="new-order">Place Order</button>
             <!-- // <button type="submit" class="submit" id="submit">Submit</button> -->
         </form>
 
-        <div class="btn bg-info " id="add-form ">Another difrent pizza</div>
+
     </div>
     <script src="./js/index.js "></script>
 </body>

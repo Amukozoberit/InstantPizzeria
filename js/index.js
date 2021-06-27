@@ -3,7 +3,6 @@ $(document).ready(function() {
     $("input").change(function() {
         var inputtedSize = $('input[name="Size"]:checked').val();
         var inputtedCrust = $('input[name="Crust"]:checked').val();
-        // console.log(inputtedTop);
         var howMany = $('input#howMany').val();
         console.log(howMany)
         console.log(inputtedCrust);
@@ -21,25 +20,21 @@ $(document).ready(function() {
         var ordertot = document.querySelector("#orderTotal p");
         ordertot.textContent = "Total=    " +
             order1.total();
-
     });
+    $("form button#new-order").click(function(event) {
+        return false;
+    })
 
 });
 $("input[type=checkbox]").change(function() {
-
     if (inputtedTop.includes(this.value)) {
-
         inputtedTop.splice(inputtedTop.indexOf(this.value), 1);
     } else {
         inputtedTop.push(this.value);
     };
-
-
 });
 
-$("#add-form").click(function() {
-    $("form#pizzaOrder").append()
-});
+
 
 
 

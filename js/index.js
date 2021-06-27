@@ -23,7 +23,8 @@ $(document).ready(function() {
     });
     $("form button#new-order").click(function(event) {
         return false;
-    })
+    });
+    openNav();
 
 });
 $("input[type=checkbox]").change(function() {
@@ -81,4 +82,16 @@ Order.prototype.total = function() {
     });
     total *= howMany;
     return (total);
+}
+
+
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    padding: "20px";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0px";
+    document.getElementById("main").style.marginLeft = "0px";
 }

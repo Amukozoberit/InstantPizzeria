@@ -22,9 +22,17 @@ $(document).ready(function() {
             order1.total();
     });
     $("form button#new-order").click(function(event) {
+
+        var size = document.querySelector("#orderSize")
+        var Crust = document.querySelector("#orderCrust")
+        var Toopings = document.querySelector("#orderToppings");
+        alert(size.innerHTML);
+        alert(Crust.innerHTML, );
+        alert(Toopings.innerHTML);
         return false;
+
     });
-    openNav();
+
 
 });
 $("input[type=checkbox]").change(function() {
@@ -82,16 +90,4 @@ Order.prototype.total = function() {
     });
     total *= howMany;
     return (total);
-}
-
-
-function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    padding: "20px";
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.width = "0px";
-    document.getElementById("main").style.marginLeft = "0px";
 }

@@ -8,8 +8,16 @@
     height: 100%;
 }
 
+.card-header {
+    text-align: center;
+}
+
 .col-md-3 {
     height: 300px;
+}
+
+.col {
+    height: 400px;
 }
 
 .footer {

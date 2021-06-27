@@ -22,7 +22,7 @@ $(document).ready(function() {
             order1.total();
     });
     $("#new-order").click(function(event) {
-        alert("a");
+        alert("if you want it delivered then you have to enter your details below.<br>Click ok to proceed")
         var size = document.querySelector("#orderSize")
         var Crust = document.querySelector("#orderCrust")
         var Toopings = document.querySelector("#orderToppings");
@@ -32,7 +32,14 @@ $(document).ready(function() {
             // alert(Crust.innerHTML, );
             // alert(Toopings.innerHTML);
             // alert(howMany);
-        alert("ksh" + Total.innerHTML);
+        if (($('input[name="Size"]:checked').val() === "Any") || ($('input[name="Crust"]:checked').val() === "") || (inputtedTop.length === 0)) {
+            alert("hey your order is incomplete");
+
+            $('input[type="radio"]').prop("checked", false);
+            $('input[type="checkbox"]').prop("checked", false);
+            return false;
+        }
+        //alert("ksh" + Total.innerHTML);
         bo = '<div class="card w-400px">' +
             '<div class="card-header">' +
             '<h1 class="center">Order Summary</h1>' +
@@ -66,9 +73,7 @@ $("input[type=checkbox]").change(function() {
     };
 });
 
-
-$("#submit").click(function() {
-
+function deliveries() {
     // alert("subm");
     var location;
     var Email;
@@ -87,22 +92,26 @@ $("#submit").click(function() {
     }
     var y = document.getElementById('new-order');
     y.style.display = 'block';
+}
+
+$("#submit").click(function() {
+    deliveries();
     //alert(location + phoneNum + Email);
     return false;
 })
 
-$(".showdelivery").click(function() {
-    function show() {
-        var x = document.getElementById('showD');
-        var y = document.getElementById('new-order');
-        if (x.style.display == 'none') {
-            x.style.display = 'block';
-            y.style.display = 'none';
-        } else {
-            x.style.display = 'none';
-            y.style.display = 'block';
-        }
+function show() {
+    var x = document.getElementById('showD');
+    var y = document.getElementById('new-order');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+        y.style.display = 'none';
+    } else {
+        x.style.display = 'none';
+        y.style.display = 'block';
     }
+}
+$(".showdelivery").click(function() {
     show();
 });
 

@@ -21,8 +21,8 @@ $(document).ready(function() {
         ordertot.textContent = "Total=    " +
             order1.total();
     });
-    $("form button#new-order").click(function(event) {
-
+    $("#new-order").click(function(event) {
+        alert("a");
         var size = document.querySelector("#orderSize")
         var Crust = document.querySelector("#orderCrust")
         var Toopings = document.querySelector("#orderToppings");
@@ -67,15 +67,40 @@ $("input[type=checkbox]").change(function() {
 });
 
 
+$("#submit").click(function() {
 
+    // alert("subm");
+    var location;
+    var Email;
+    if ($("input#location").val() === "") {
+        alert("empty inputs");
+        return false;
+    } else {
+        location = $("input#location").val();
+    }
+
+    if ($("input#phone").val() === "") {
+        alert("empty phone");
+        return false;
+    } else {
+        Email = $("input#mail").val();
+    }
+    var y = document.getElementById('new-order');
+    y.style.display = 'block';
+    //alert(location + phoneNum + Email);
+    return false;
+})
 
 $(".showdelivery").click(function() {
     function show() {
         var x = document.getElementById('showD');
+        var y = document.getElementById('new-order');
         if (x.style.display == 'none') {
             x.style.display = 'block';
+            y.style.display = 'none';
         } else {
             x.style.display = 'none';
+            y.style.display = 'block';
         }
     }
     show();

@@ -4,6 +4,10 @@
                 padding: 0px;
             }
             
+            .col {
+                margin: 3px;
+            }
+            
             .navbar,
             .page-footer {
                 color: #007bff;

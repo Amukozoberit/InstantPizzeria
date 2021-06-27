@@ -157,22 +157,51 @@
                 </div>
             </div>
         </form>
-        <button class="showdelivery">Deliver</button>
-        <div class="card" id="showD" style="display: none;">
-            <div class="card-header">
+        <button type="button" class="bg-primary" id="new-order" style="width:100%">Place Order</button>
+        <button class="showdelivery w-100">Deliver</button>
+        <div class="card" id="showD" style="height:300px;width: 500px;display:none;">
+            <div class="card-header ">
                 In need of delivery We gatchu
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <input type="text" id="location">
+                    <div class="row">
+                        <div class="col">
+                            <label for="location">Location</label>
+                            <br>
+                            <label for="Phone number">Phone number</label>
+                            <br>
+                            <label for="Email" style="margin-right:30px">Email</label>
+                            <br>
+                            <label for="Payment ">Payment Option</label>
+                            <br>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="location">
+                            <input type="number" id="phone">
+                            <input type="Email" id="mail">
+                            <select name="pay " id="PayType ">
+                                <option value="Mpesa ">Mpesa</option>
+                                <option value="Credit card ">Credit Card</option>
+                                <option value="Airtel Money ">Airtel Money</option>
+                            </select>
+                            <div class="p-5 m-5">
+                                <button class="submit" id="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
         </div>
-        <button type="button" class="bg-primary" id="new-order">Place Order</button>
-        <!-- // <button type="submit" class="submit" id="submit">Submit</button> -->
-        <p class="contents" tyle=" display:none ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam enim obcaecati, facere corporis aspernatur? Fugit rem doloribus suscipit voluptatem cumque autem vel rerum, quia sint minima dolores ratione deserunt.</p>
+
+
+        <!-- // <button type="submit " class="submit " id="submit ">Submit</button> -->
+        <p class="contents " tyle=" display:none ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam enim obcaecati, facere corporis aspernatur? Fugit rem doloribus suscipit voluptatem cumque autem vel rerum, quia sint minima dolores ratione deserunt.</p>
         </form>
     </div>
+
     <script src="./js/index.js "></script>
 </body>
 

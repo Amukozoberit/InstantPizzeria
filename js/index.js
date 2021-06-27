@@ -26,13 +26,22 @@ $(document).ready(function() {
         var size = document.querySelector("#orderSize")
         var Crust = document.querySelector("#orderCrust")
         var Toopings = document.querySelector("#orderToppings");
+        var Total = document.querySelector("#orderTotal p")
         alert(size.innerHTML);
         alert(Crust.innerHTML, );
         alert(Toopings.innerHTML);
+        alert("ksh" + Total.innerHTML);
+        bo = '<div class="card">' + '<div class="card-header">' + '<h1 class="center">Order Summary</h1>' + '</div>' +
+            '<div class="card-body">' + '<ul>' + '<li>' + '<li>' + '</ul>' + ' < /div>' +
+            '</div>';
+        document.getElementsByTagName("body")[0].innerHTML = bo;
+
+
+        $('input[type="radio"]').prop("checked", false);
+        $('input[type="checkbox"]').prop("checked", false);
+
         return false;
-
     });
-
 
 });
 $("input[type=checkbox]").change(function() {

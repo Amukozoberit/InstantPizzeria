@@ -26,13 +26,27 @@ $(document).ready(function() {
         var size = document.querySelector("#orderSize")
         var Crust = document.querySelector("#orderCrust")
         var Toopings = document.querySelector("#orderToppings");
+        var howMany = $("input#howMany").val();
         var Total = document.querySelector("#orderTotal p")
-        alert(size.innerHTML);
-        alert(Crust.innerHTML, );
-        alert(Toopings.innerHTML);
+            // alert(size.innerHTML);
+            // alert(Crust.innerHTML, );
+            // alert(Toopings.innerHTML);
+            // alert(howMany);
         alert("ksh" + Total.innerHTML);
-        bo = '<div class="card">' + '<div class="card-header">' + '<h1 class="center">Order Summary</h1>' + '</div>' +
-            '<div class="card-body">' + '<ul>' + '<li>' + '<li>' + '</ul>' + ' < /div>' +
+        bo = '<div class="card w-400px">' +
+            '<div class="card-header">' +
+            '<h1 class="center">Order Summary</h1>' +
+            '</div>' +
+            '<div class="card-body">' +
+            '<ul style="font-weight:bold" class="pb-5 mb-5">' +
+            '<li>' + size.innerHTML + '</li>' +
+            '<li class="p-3">' + Crust.innerHTML + '</li>' +
+            '<li class="p-3">' + Toopings.innerHTML + '</li>' +
+            '<li class="p-3">' + 'HowMany: ' + howMany + '</li>' +
+            '<li style="border:1px black; padding:5px; margin:3px; height:100%;">' + 'Ksh' + Total.innerHTML + '</li>' +
+            '</ul>' + '</div>' +
+            '<div class="card-footer">' +
+            '<p>Destination details: </p>' +
             '</div>';
         document.getElementsByTagName("body")[0].innerHTML = bo;
 
@@ -55,6 +69,17 @@ $("input[type=checkbox]").change(function() {
 
 
 
+$(".showdelivery").click(function() {
+    function show() {
+        var x = document.getElementById('showD');
+        if (x.style.display == 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+    show();
+});
 
 function Order(Size, Crust, Toppings, howMany) {
     this.Size = Size;

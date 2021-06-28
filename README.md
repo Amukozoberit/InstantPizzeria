@@ -6,8 +6,9 @@
 
 ## Description
 
-This project is a web application for Delani studio that shows details about the services it offers, has information about the studio, a portfolio section and a form that enables users to send their messages and concern to Delani studios. 
-
+This project is a web application for InstantPizzeria that allows users to order pizzas with or withput deliveries.Users can then contact use using the mailchimp API we are able to get their mails.  
+On submit the users order is displayed on the same page replacing the previous menu.
+To get another difrent order just refresh the page.
 
 
 ## Live Page 
@@ -19,7 +20,7 @@ https://amukozoberit.github.io/instantPizzeria/
 
 * git clone ```https://github.com/Amukozoberit/instantPizzeria.git```
 
-* cd Delani-Studio
+* cd instantPizzeria
 
 * code . or atom . depending on the text editor of your choise.
 

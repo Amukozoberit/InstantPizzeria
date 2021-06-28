@@ -66,7 +66,7 @@ function deliveries() {
     var Email;
     var phone;
     if (($("input#location").val() === "") || ($("input#phone").val() === "") || ($("input#mail").val() === "")) {
-        alert("Empty delivery inputs To continuing makes you order without delivery .click ok to continue .If you want delivery click delivery button to add delivery info");
+        alert("EMPTY DELIVERY INPUTS.Continuing makes you order without delivery .click ok to continue .If you want delivery click delivery button to add delivery info");
         return false;
     } else {
         location = $("input#location").val();
@@ -162,7 +162,7 @@ $(document).ready(function() {
                 '<p>Thank you for shoping with us</p>' +
                 '</div>';
             document.getElementsByTagName("body")[0].innerHTML = bo;
-
+            alert("We are delivering to " + delivery[0]);
             $('input[type="radio"]').prop("checked", false);
             $('input[type="checkbox"]').prop("checked", false);
         }

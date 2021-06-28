@@ -27,6 +27,7 @@ $(document).ready(function() {
         var Toopings = document.querySelector("#orderToppings");
         var howMany = $("input#howMany").val();
         var y = document.getElementById("");
+        var delivery = deliveries();
         var Total = document.querySelector("#orderTotal p")
         if (($('input[name="Size"]:checked').val() === "Any") || ($('input[name="Crust"]:checked').val() === "") || (inputtedTop.length === 0)) {
             alert("hey your order is incomplete fill out missing values");
@@ -50,7 +51,7 @@ $(document).ready(function() {
                 '<li style="border:1px black; padding:5px; margin:3px; height:100%;">' + 'Ksh' + Total.innerHTML + '</li>' +
                 '</ul>' + '</div>' +
                 '<div class="card-footer">' +
-                '<p>Destination details: </p>' +
+                '<p>We aprecite you </p>' +
                 '</div>';
             document.getElementsByTagName("body")[0].innerHTML = bo;
 
@@ -69,10 +70,14 @@ $(document).ready(function() {
                 '<li class="p-3">' + Toopings.innerHTML + '</li>' +
                 '<li class="p-3">' + 'HowMany: ' + howMany + '</li>' +
                 '<li style="border:1px black; padding:5px; margin:3px; height:100%;">' + 'Ksh' + Total.innerHTML + '</li>' +
-                '</ul>' + '</div>' + '<div class="destination">' + '<div>' + deliveries().location + '</div>' +
+                '</ul>' + '</div>' + '<div class="destination">' + '<div class="bold">' + 'Destination' + '</div>' +
+                '<div>' + 'Location: ' + delivery[0] + ' </div>' +
+                '<div>' + 'Phone number :' +
+                delivery[2] + '</div>' +
+                '<div>' + 'Email: ' + delivery[1] + ' </div>' +
                 '</div>' +
                 '<div class="card-footer">' +
-                '<p>Destination details: </p>' +
+                '<p>Thank you for shoping with us</p>' +
                 '</div>';
             document.getElementsByTagName("body")[0].innerHTML = bo;
 
@@ -102,12 +107,14 @@ function deliveries() {
     } else {
         location = $("input#location").val();
         delValues.push(location);
-        phone = $("input#mail").val();
+        Email = $("input#mail").val();
         delValues.push(Email);
+        phone = $("input#phone").val();
+        delValues.push(phone);
     }
     var y = document.getElementById('new-order');
     y.style.display = 'block';
-    return
+    return delValues;
 
 }
 

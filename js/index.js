@@ -21,38 +21,64 @@ $(document).ready(function() {
             order1.total();
     });
     $("#new-order").click(function(event) {
-        alert("if you want it delivered then you have to enter your details below.<br>Click ok to proceed")
+
         var size = document.querySelector("#orderSize")
         var Crust = document.querySelector("#orderCrust")
         var Toopings = document.querySelector("#orderToppings");
         var howMany = $("input#howMany").val();
+        var y = document.getElementById("");
         var Total = document.querySelector("#orderTotal p")
         if (($('input[name="Size"]:checked').val() === "Any") || ($('input[name="Crust"]:checked').val() === "") || (inputtedTop.length === 0)) {
-            alert("hey your order is incomplete");
+            alert("hey your order is incomplete fill out missing values");
             $('input[type="radio"]').prop("checked", false);
             $('input[type="checkbox"]').prop("checked", false);
             return false;
         }
-        bo = '<div class="card w-400px">' +
-            '<div class="card-header">' +
-            '<h1 class="center">Order Summary</h1>' +
-            '</div>' +
-            '<div class="card-body">' +
-            '<ul style="font-weight:bold" class="pb-5 mb-5">' +
-            '<li>' + size.innerHTML + '</li>' +
-            '<li class="p-3">' + Crust.innerHTML + '</li>' +
-            '<li class="p-3">' + Toopings.innerHTML + '</li>' +
-            '<li class="p-3">' + 'HowMany: ' + howMany + '</li>' +
-            '<li style="border:1px black; padding:5px; margin:3px; height:100%;">' + 'Ksh' + Total.innerHTML + '</li>' +
-            '</ul>' + '</div>' +
-            '<div class="card-footer">' +
-            '<p>Destination details: </p>' +
-            '</div>';
-        document.getElementsByTagName("body")[0].innerHTML = bo;
+        var x = document.getElementById("showD");
+        if (x.style.display === 'none') {
+            alert("if you want it delivered then you have to enter your details below.<br>Click ok to proceed")
+            bo = '<div class="card w-400px">' +
+                '<div class="card-header">' +
+                '<h1 class="center">Order Summary</h1>' +
+                '</div>' +
+                '<div class="card-body">' +
+                '<ul style="font-weight:bold" class="pb-5 mb-5">' +
+                '<li>' + size.innerHTML + '</li>' +
+                '<li class="p-3">' + Crust.innerHTML + '</li>' +
+                '<li class="p-3">' + Toopings.innerHTML + '</li>' +
+                '<li class="p-3">' + 'HowMany: ' + howMany + '</li>' +
+                '<li style="border:1px black; padding:5px; margin:3px; height:100%;">' + 'Ksh' + Total.innerHTML + '</li>' +
+                '</ul>' + '</div>' +
+                '<div class="card-footer">' +
+                '<p>Destination details: </p>' +
+                '</div>';
+            document.getElementsByTagName("body")[0].innerHTML = bo;
 
-        $('input[type="radio"]').prop("checked", false);
-        $('input[type="checkbox"]').prop("checked", false);
-        return false;
+            $('input[type="radio"]').prop("checked", false);
+            $('input[type="checkbox"]').prop("checked", false);
+            return false;
+        } else {
+            bo = '<div class="card w-400px">' +
+                '<div class="card-header">' +
+                '<h1 class="center">Order Summary</h1>' +
+                '</div>' +
+                '<div class="card-body">' +
+                '<ul style="font-weight:bold" class="pb-5 mb-5">' +
+                '<li>' + size.innerHTML + '</li>' +
+                '<li class="p-3">' + Crust.innerHTML + '</li>' +
+                '<li class="p-3">' + Toopings.innerHTML + '</li>' +
+                '<li class="p-3">' + 'HowMany: ' + howMany + '</li>' +
+                '<li style="border:1px black; padding:5px; margin:3px; height:100%;">' + 'Ksh' + Total.innerHTML + '</li>' +
+                '</ul>' + '</div>' + '<div class="destination">' + '<div>' + deliveries().location + '</div>' +
+                '</div>' +
+                '<div class="card-footer">' +
+                '<p>Destination details: </p>' +
+                '</div>';
+            document.getElementsByTagName("body")[0].innerHTML = bo;
+
+            $('input[type="radio"]').prop("checked", false);
+            $('input[type="checkbox"]').prop("checked", false);
+        }
     });
 
 });
@@ -66,23 +92,23 @@ $("input[type=checkbox]").change(function() {
 
 function deliveries() {
     // alert("subm");
+    var delValues = []
     var location;
     var Email;
-    if ($("input#location").val() === "") {
+    var phone;
+    if (($("input#location").val() === "") || ($("input#phone").val() === "") || ($("input#mail").val() === "")) {
         alert("empty inputs");
         return false;
     } else {
         location = $("input#location").val();
-    }
-
-    if ($("input#phone").val() === "") {
-        alert("empty phone");
-        return false;
-    } else {
-        Email = $("input#mail").val();
+        delValues.push(location);
+        phone = $("input#mail").val();
+        delValues.push(Email);
     }
     var y = document.getElementById('new-order');
     y.style.display = 'block';
+    return
+
 }
 
 $("#submit").click(function() {

@@ -8,8 +8,7 @@
 
 This project is a web application for Delani studio that shows details about the services it offers, has information about the studio, a portfolio section and a form that enables users to send their messages and concern to Delani studios. 
 
-## Screenshot
-<img src="https://github.com/Amukozoberit/images/back2.jpeg?raw=true" width="900px" height="440px">
+
 
 ## Live Page 
 https://amukozoberit.github.io/instantPizzeria/

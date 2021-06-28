@@ -13,14 +13,11 @@ $(document).ready(function() {
         size.textContent = "Size:       " + inputtedSize;
         var Crust = document.getElementById("orderCrust");
         Crust.textContent = "Crust:      " + inputtedCrust;
-        if (inputtedSize === "Any") {
-            alert("size is needed before toppings");
-            $('input[type="checkbox"]').prop("checked", false);
-        } else {
-            var toppings = document.querySelector("#orderToppings");
-            toppings.textContent = " "
-            toppings.textContent = "Toppings:       " + inputtedTop;
-        }
+
+        var toppings = document.querySelector("#orderToppings");
+        toppings.textContent = " "
+        toppings.textContent = "Toppings:       " + inputtedTop;
+
         var ordertot = document.querySelector("#orderTotal p");
         ordertot.textContent = "Total=    " +
             order1.total();
@@ -92,11 +89,20 @@ $(document).ready(function() {
 
 });
 $("input[type=checkbox]").change(function() {
-    if (inputtedTop.includes(this.value)) {
-        inputtedTop.splice(inputtedTop.indexOf(this.value), 1);
+    var inputtedSize = $('input[name="Size"]:checked').val();
+    if (inputtedSize == "Any") {
+        alert("invalid");
+        $('input[type="checkbox"]').prop("checked", false)
+        return
     } else {
-        inputtedTop.push(this.value);
-    };
+
+
+        if (inputtedTop.includes(this.value)) {
+            inputtedTop.splice(inputtedTop.indexOf(this.value), 1);
+        } else {
+            inputtedTop.push(this.value);
+        };
+    }
 });
 
 function deliveries() {
@@ -204,6 +210,9 @@ Order.prototype.total = function() {
     tops = arr.forEach(function(top) {
         total += parseInt(toppingPrice[sizeA][top]);
     })
+    total *= howMany;
+    return (total);
+
     total *= howMany;
     return (total);
 }

@@ -13,9 +13,14 @@ $(document).ready(function() {
         size.textContent = "Size:       " + inputtedSize;
         var Crust = document.getElementById("orderCrust");
         Crust.textContent = "Crust:      " + inputtedCrust;
-        var toppings = document.querySelector("#orderToppings");
-        toppings.textContent = " "
-        toppings.textContent = "Toppings:       " + inputtedTop;
+        if (inputtedSize === "Any") {
+            alert("size is needed before toppings");
+            $('input[type="checkbox"]').prop("checked", false);
+        } else {
+            var toppings = document.querySelector("#orderToppings");
+            toppings.textContent = " "
+            toppings.textContent = "Toppings:       " + inputtedTop;
+        }
         var ordertot = document.querySelector("#orderTotal p");
         ordertot.textContent = "Total=    " +
             order1.total();
@@ -162,10 +167,24 @@ let crustPrices = {
 }
 
 let toppingPrice = {
-    Broccolini: 50,
-    Sausage: 150,
-    Potatoes: 30,
-    Capsicum: 50
+    Large: {
+        Broccolini: 50,
+        Sausage: 50,
+        Potatoes: 30,
+        Capsicum: 40
+    },
+    Medium: {
+        Broccolini: 30,
+        Sausage: 30,
+        Potatoes: 20,
+        Capsicum: 15,
+    },
+    Small: {
+        Broccolini: 15,
+        Sausage: 15,
+        Potatoes: 10,
+        Capsicum: 10
+    }
 }
 
 
@@ -177,10 +196,14 @@ Order.prototype.total = function() {
     let arr = this.Toppings;
     total += sizep;
     total += crustP;
+    sizeA = this.Size;
 
+    // tops = arr.forEach(function(top) {
+    //     total += parseInt(toppingPrice[top]);
+    // });
     tops = arr.forEach(function(top) {
-        total += parseInt(toppingPrice[top]);
-    });
+        total += parseInt(toppingPrice[sizeA][top]);
+    })
     total *= howMany;
     return (total);
 }

@@ -1,4 +1,85 @@
 let inputtedTop = [];
+
+let sizePrices = {
+    Small: 500,
+    Medium: 550,
+    Large: 600,
+    Any: 0,
+}
+
+
+let crustPrices = {
+    Crispy: 50,
+    Stuffed: 100,
+    gluttenFree: 230,
+    none: 0,
+}
+
+
+
+
+let toppingPrice = {
+    Large: {
+        Broccolini: 50,
+        Sausage: 50,
+        Potatoes: 30,
+        Capsicum: 40
+    },
+    Medium: {
+        Broccolini: 30,
+        Sausage: 30,
+        Potatoes: 20,
+        Capsicum: 15,
+    },
+    Small: {
+        Broccolini: 15,
+        Sausage: 15,
+        Potatoes: 10,
+        Capsicum: 10
+    }
+}
+
+
+
+function Order(Size, Crust, Toppings, howMany) {
+    this.Size = Size;
+    this.Crust = Crust;
+    this.Toppings = Toppings;
+    this.howMany = howMany;
+}
+
+function show() {
+    var x = document.getElementById('showD');
+    var y = document.getElementById('new-order');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+        y.style.display = 'none';
+    } else {
+        x.style.display = 'none';
+        y.style.display = 'block';
+    }
+}
+
+function deliveries() {
+    var delValues = []
+    var location;
+    var Email;
+    var phone;
+    if (($("input#location").val() === "") || ($("input#phone").val() === "") || ($("input#mail").val() === "")) {
+        alert("Empty delivery inputs To continuing makes you order without delivery .click ok to continue .If you want delivery click delivery button to add delivery info");
+        return false;
+    } else {
+        location = $("input#location").val();
+        delValues.push(location);
+        Email = $("input#mail").val();
+        delValues.push(Email);
+        phone = $("input#phone").val();
+        delValues.push(phone);
+    }
+    var y = document.getElementById('new-order');
+    y.style.display = 'block';
+    return delValues;
+}
 $(document).ready(function() {
     $("input").change(function() {
         var inputtedSize = $('input[name="Size"]:checked').val();
@@ -38,7 +119,7 @@ $(document).ready(function() {
         }
         var x = document.getElementById("showD");
         if (x.style.display === 'none') {
-            alert("if you want it delivered then you have to enter your details below.<br>Click ok to proceed")
+            // alert("if you want it delivered then you have to enter your details below.<br>Click ok to proceed")
             bo = '<div class="card w-400px">' +
                 '<div class="card-header">' +
                 '<h1 class="center">Order Summary</h1>' +
@@ -91,7 +172,7 @@ $(document).ready(function() {
 $("input[type=checkbox]").change(function() {
     var inputtedSize = $('input[name="Size"]:checked').val();
     if (inputtedSize == "Any") {
-        alert("invalid");
+        alert("Its absurd to select toppings before choosing the size");
         $('input[type="checkbox"]').prop("checked", false)
         return
     } else {
@@ -105,93 +186,17 @@ $("input[type=checkbox]").change(function() {
     }
 });
 
-function deliveries() {
-    // alert("subm");
-    var delValues = []
-    var location;
-    var Email;
-    var phone;
-    if (($("input#location").val() === "") || ($("input#phone").val() === "") || ($("input#mail").val() === "")) {
-        alert("empty inputs");
-        return false;
-    } else {
-        location = $("input#location").val();
-        delValues.push(location);
-        Email = $("input#mail").val();
-        delValues.push(Email);
-        phone = $("input#phone").val();
-        delValues.push(phone);
-    }
-    var y = document.getElementById('new-order');
-    y.style.display = 'block';
-    return delValues;
 
-}
 $("#submit").click(function() {
     deliveries();
-    //alert(location + phoneNum + Email);
     return false;
 })
 
-function show() {
-    var x = document.getElementById('showD');
-    var y = document.getElementById('new-order');
-    if (x.style.display == 'none') {
-        x.style.display = 'block';
-        y.style.display = 'none';
-    } else {
-        x.style.display = 'none';
-        y.style.display = 'block';
-    }
-}
+
 $(".showdelivery").click(function() {
     show();
 });
 
-
-function Order(Size, Crust, Toppings, howMany) {
-    this.Size = Size;
-    this.Crust = Crust;
-    this.Toppings = Toppings;
-    this.howMany = howMany;
-}
-
-
-let sizePrices = {
-    Small: 500,
-    Medium: 550,
-    Large: 600,
-    Any: 0,
-}
-
-
-let crustPrices = {
-    Crispy: 50,
-    Stuffed: 100,
-    gluttenFree: 230,
-    none: 0,
-}
-
-let toppingPrice = {
-    Large: {
-        Broccolini: 50,
-        Sausage: 50,
-        Potatoes: 30,
-        Capsicum: 40
-    },
-    Medium: {
-        Broccolini: 30,
-        Sausage: 30,
-        Potatoes: 20,
-        Capsicum: 15,
-    },
-    Small: {
-        Broccolini: 15,
-        Sausage: 15,
-        Potatoes: 10,
-        Capsicum: 10
-    }
-}
 
 
 Order.prototype.total = function() {
@@ -203,16 +208,9 @@ Order.prototype.total = function() {
     total += sizep;
     total += crustP;
     sizeA = this.Size;
-
-    // tops = arr.forEach(function(top) {
-    //     total += parseInt(toppingPrice[top]);
-    // });
     tops = arr.forEach(function(top) {
         total += parseInt(toppingPrice[sizeA][top]);
     })
-    total *= howMany;
-    return (total);
-
     total *= howMany;
     return (total);
 }

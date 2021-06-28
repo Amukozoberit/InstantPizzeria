@@ -21,7 +21,6 @@ $(document).ready(function() {
             order1.total();
     });
     $("#new-order").click(function(event) {
-
         var size = document.querySelector("#orderSize")
         var Crust = document.querySelector("#orderCrust")
         var Toopings = document.querySelector("#orderToppings");
@@ -117,7 +116,6 @@ function deliveries() {
     return delValues;
 
 }
-
 $("#submit").click(function() {
     deliveries();
     //alert(location + phoneNum + Email);
@@ -139,26 +137,28 @@ $(".showdelivery").click(function() {
     show();
 });
 
+
 function Order(Size, Crust, Toppings, howMany) {
     this.Size = Size;
     this.Crust = Crust;
     this.Toppings = Toppings;
     this.howMany = howMany;
 }
+
+
 let sizePrices = {
     Small: 500,
     Medium: 550,
     Large: 600,
     Any: 0,
 }
+
+
 let crustPrices = {
     Crispy: 50,
     Stuffed: 100,
     gluttenFree: 230,
     none: 0,
-}
-let CheckPrices = {
-
 }
 
 let toppingPrice = {
@@ -167,6 +167,7 @@ let toppingPrice = {
     Potatoes: 30,
     Capsicum: 50
 }
+
 
 Order.prototype.total = function() {
     let total = 0;
